@@ -23,13 +23,15 @@ class DHHomePage extends StatelessWidget {
         title: const Text("商品列表"),
       ),
       // body: const DHHomeContent(),
-      body: DHHomeContentSub(),
+      body: const DHHomeContentSub("你好李焕英！"),
     );
   }
 }
 
 // Widget 是不加_：暴露给别人使用
 class DHHomeContentSub extends StatefulWidget {
+  final String message;
+  const DHHomeContentSub(this.message, {super.key});
   // bu
   @override
   State<StatefulWidget> createState() {
@@ -47,11 +49,23 @@ class DHHomeContentSub extends StatefulWidget {
 class _DHHomeContentStateSub extends State<DHHomeContentSub> {
   // bu
   String title = "why";
+/*
+late关键字可以用于延迟初始化，即在变量声明时不进行初始化，而是等到变量第一次被使用时再进行初始化。这对于一些需要延迟初始化的场景很有用，比如在构造函数中无法初始化的变量。
 
+使用late关键字声明的变量必须是非空的，并且只能被初始化一次。在使用该变量之前，必须先对其进行初始化，否则会抛出LateInitializationError异常。可以使用lateinit属性来检查变量是否已经被初始化。
+
+ void initialize() {
+    name = "John";
+  }
+  void printName() {
+    print(name);
+  }
+*/
   late int _counter = 0;
 
   @override
   Widget build(BuildContext context) {
+    // this.widget.message
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -60,7 +74,8 @@ class _DHHomeContentStateSub extends State<DHHomeContentSub> {
           Text(
             "当前计数:$_counter",
             style: const TextStyle(fontSize: 25),
-          )
+          ),
+          Text("传递的信息:${widget.message}")
         ],
       ),
     );
@@ -88,6 +103,7 @@ class _DHHomeContentStateSub extends State<DHHomeContentSub> {
           // onPressed: () => print("Button Clicked!-"),
           onPressed: () {
             setState(() {
+              // 传入匿名函数
               _counter--;
             });
           },
