@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "bf43001baa8d5928036fc973333ca8956b7d4a06b27080a43f022098785cc23d"
+build_start_time: [1682678187, 791543006]
+build_end_time: [1682678206, 703788042]
+inputs:
+  ? "/Volumes/\u672A\u547D\u540D/\u51EF\u54E5\u6570\u636E\u6062\u590D15011266657/15201503585\u56FA\u6001\u6570\u636E/UseCode/Project/OC/zkty/customer/FlutterDemo/flutter_application/macos/Flutter/GeneratedPluginRegistrant.swift"
+  : [1682678147, 0]
+  ? "/Volumes/\u672A\u547D\u540D/\u51EF\u54E5\u6570\u636E\u6062\u590D15011266657/15201503585\u56FA\u6001\u6570\u636E/UseCode/Project/OC/zkty/customer/FlutterDemo/flutter_application/macos/Runner/AppDelegate.swift"
+  : [1671083458, 0]
+  ? "/Volumes/\u672A\u547D\u540D/\u51EF\u54E5\u6570\u636E\u6062\u590D15011266657/15201503585\u56FA\u6001\u6570\u636E/UseCode/Project/OC/zkty/customer/FlutterDemo/flutter_application/macos/Runner/MainFlutterWindow.swift"
+  : [1671083458, 0]
