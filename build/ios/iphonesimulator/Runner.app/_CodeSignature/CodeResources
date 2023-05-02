@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		ff31ZT31d2zylcg18rGA3FH1Eh0=
+		kP18CfLvrTWo9lwjBpY8tWaR61Q=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		JVLnoOzR0BR3Dz1+YPvkJLbqO5A=
+		67FpuTpb4KrUEHYu8U8jJjaO9dc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		gsLWnEJ13EUNiAaNnNslD5rAVDg=
+		5Et2auc7zLm8ygfJdJ1hufU1twc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		qClpJUqourh3L+oLuGIpNUyaAvI=
+		sHFPA5QD9fwdcw9xqXlMFqyL818=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Frameworks/Flutter.framework/Flutter</key>
 		<data>
-		X/t6bK+I8/zo9yD3OxEDBD2zYgM=
+		ahUuhHrJnhM2ejWL0/zVGv0mmXA=
 		</data>
 		<key>Frameworks/Flutter.framework/Headers/Flutter.h</key>
 		<data>
@@ -176,6 +176,18 @@
 		<data>
 		q5acp6rOkQ+ckG1e10c6ecrMr8U=
 		</data>
+		<key>Frameworks/audioplayers_darwin.framework/Info.plist</key>
+		<data>
+		p4V+so3piQrgDBXmTk+QoIHFYuk=
+		</data>
+		<key>Frameworks/audioplayers_darwin.framework/_CodeSignature/CodeResources</key>
+		<data>
+		rvOZnK3GO4IJ9VI45ajz9k/VSSE=
+		</data>
+		<key>Frameworks/audioplayers_darwin.framework/audioplayers_darwin</key>
+		<data>
+		hDSiA2mxFfI3uYuMo/xv2c/ZuXI=
+		</data>
 		<key>Frameworks/package_info.framework/Info.plist</key>
 		<data>
 		nvrCNFFH29B27NMF7uvvIgReMIU=
@@ -186,11 +198,23 @@
 		</data>
 		<key>Frameworks/package_info.framework/package_info</key>
 		<data>
-		V55G25gTqGZhV001SB8EDjNigGk=
+		XY5bnwLSd6Uzg3wUcB55xrHRZEg=
+		</data>
+		<key>Frameworks/path_provider_foundation.framework/Info.plist</key>
+		<data>
+		PpI83t5BpLtRUrLDQ/r3obWE1yw=
+		</data>
+		<key>Frameworks/path_provider_foundation.framework/_CodeSignature/CodeResources</key>
+		<data>
+		xIGOkns0ayXCeBAs7xtjp0WCUx4=
+		</data>
+		<key>Frameworks/path_provider_foundation.framework/path_provider_foundation</key>
+		<data>
+		F4J94vyEfvF04pMX5+bvYrCzqIQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NdP3561gYPEkUvNhQgkMKgIgqjs=
+		WJ6HzhlWX1iZoFzsEQ2Ug8ON/hs=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -273,7 +297,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			A8vhBBwZQVwqjxPgg0SQkE8np5hHA/FCRMaFRxyZ3zw=
+			1WzYtwb//7OOjQFczCUGqt1lDvaGUOZbRIH5mIiK+58=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -287,7 +311,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0IyCYinqejjvXyN8QGa2COgMGC85pkh4/Z1Cryrgq4I=
+			y+tPuOlJEtcVsZ55ZE+p/LYBJ4X8fGSr7U4v9MBwAPo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -308,7 +332,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			d0TUGMuDP5G9yLpRNDZvAH3Niv5RNvBNZKWVSzb6UMg=
+			Sib8ba8Hs2NtbRyMmveooeI56drT51HLtINh7rWrplA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -329,7 +353,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			B/YOqmGkBJAVFLmVszoqNiwOFbnwEgFgJx+WJq1A2Qo=
+			fJVsFz6ZQhxdL5Sa8/FS0+VC2SgPeF3MqaVlagWDRYs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -357,7 +381,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v0j8jVE5JtyiXzisOpQal5b1uzszLO0lug7ovWkvQ3U=
+			4vVvhccHxzJocN6ojlwQ3wBH/8QIH1YX7IXBQvzKVcM=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/Headers/Flutter.h</key>
@@ -500,6 +524,27 @@
 			sA+D9pONLsc1rI+XDHefj/KAY7kac9Ait6lUu4UjHDg=
 			</data>
 		</dict>
+		<key>Frameworks/audioplayers_darwin.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t3gxKR18Z9Soj2pIZvL6ysbul2NCHKNvooZOfZd3R0Y=
+			</data>
+		</dict>
+		<key>Frameworks/audioplayers_darwin.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KNXvLr8I/CrtE1Pm/lxikRa0P6oZw3CnmikBuRk2W1s=
+			</data>
+		</dict>
+		<key>Frameworks/audioplayers_darwin.framework/audioplayers_darwin</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SXZUJxurKxOQDJ43399z3H5FXm2ZaoxZA90N2DPK8QE=
+			</data>
+		</dict>
 		<key>Frameworks/package_info.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -518,7 +563,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			70Pk2kD+L24IJO9xAwswb7Iudf/67R4oHlk6kKsr07Q=
+			FoxDIHDZbGcmUtgBU5rd9YPe08eYWTZbF23UMQqlrmc=
+			</data>
+		</dict>
+		<key>Frameworks/path_provider_foundation.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WQKeMPBRN2Bbl1attLfsdjHeWt3S7Luc1l2Gj57p4Jk=
+			</data>
+		</dict>
+		<key>Frameworks/path_provider_foundation.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZO9Wpga7wVske9SWMWvUS+ZShMuDbKEOH9f4bcd1c/c=
+			</data>
+		</dict>
+		<key>Frameworks/path_provider_foundation.framework/path_provider_foundation</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			t8YE59UUtBTPZXMaUDpRW6FUz6l55puZ1T7l1mOGpBo=
 			</data>
 		</dict>
 	</dict>

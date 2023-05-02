@@ -37,6 +37,13 @@ class DHHomeContentSub extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _DHHomeContentStateSub();
   }
+  // StatefulWidget 生命周期
+  // 调用constructor
+  // 调用createState
+  // 调用constructor
+  // 调用initState
+  // 调用build
+  // 调用dispose
 }
 
 /// 为什么Flutter在设计的时候StatefulWidget的build方法放在state中
@@ -79,6 +86,13 @@ late关键字可以用于延迟初始化，即在变量声明时不进行初始�
         ],
       ),
     );
+  }
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    print("didChangeDependencies");
   }
 
   // child 一个元素

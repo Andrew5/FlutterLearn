@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/main_02.dart';
 
+// 5月1日12
+// 5月2日13
+// 5月3日18
 void main() => runApp(const MyApp());
+
 // 当使用的数据发生改变时 build方法会被重新执行
 // 第一次被插入到widget树中时 当父widget发生改变时 当widge依赖inheritedWidget的一些数据，inheritedWidget数据发生改变时 build方法都会被执行
 class MyApp extends StatelessWidget {
@@ -110,9 +115,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  final List<Widget> widgets = [const DHHomeContentSub("1")];
 //
   @override
   Widget build(BuildContext context) {
+    print("build");
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),

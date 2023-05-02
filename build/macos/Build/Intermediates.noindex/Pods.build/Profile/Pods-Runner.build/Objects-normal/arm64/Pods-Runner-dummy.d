@@ -1,3 +1,0 @@
-dependencies: \
-  /Volumes/未命名/凯哥数据恢复15011266657/15201503585固态数据/UseCode/Project/OC/zkty/customer/FlutterDemo/flutter_application/macos/Pods/Target\ Support\ Files/Pods-Runner/Pods-Runner-dummy.m \
-  /Volumes/未命名/凯哥数据恢复15011266657/15201503585固态数据/UseCode/Project/OC/zkty/customer/FlutterDemo/flutter_application/build/macos/Build/Intermediates.noindex/Pods.build/Profile/Pods-Runner.build/module.modulemap
