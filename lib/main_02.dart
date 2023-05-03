@@ -22,8 +22,8 @@ class DHHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("商品列表"),
       ),
-      // body: const DHHomeContent(),
-      body: const DHHomeContentSub("你好李焕英！"),
+      body: const DHHomeContent(),
+      // body: const DHHomeContentSub("你好李焕英！"),
     );
   }
 }
@@ -195,7 +195,17 @@ class DHHomeProductItem extends StatelessWidget {
           const SizedBox(height: 8),
           Text(desc, style: style2),
           const SizedBox(height: 8),
-          Image.network(imageURL)
+          Image(
+            color: Colors.red,
+            image: NetworkImage(imageURL),
+            // width: 200,
+            // height: 200,
+            colorBlendMode: BlendMode.colorDodge,
+            fit: BoxFit.contain,
+            repeat: ImageRepeat.repeatY,
+            alignment: const Alignment(0, 0),
+          )
+          // Image.network(imageURL)
         ],
       ),
     );

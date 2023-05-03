@@ -46,6 +46,8 @@ class DHHomeButton extends StatefulWidget {
 class _DHHomeButtonState extends State<DHHomeButton> {
   set isLoading(bool isLoading) {}
 
+  String icons = "";
+
   late bool _isRefreshing = false;
   Future<void> _handleRefresh() async {
     setState(() {
@@ -58,10 +60,54 @@ class _DHHomeButtonState extends State<DHHomeButton> {
       _isRefreshing = false;
     });
   }
+//如果你将这些代码放在build方法中，那么每次Widget重新build时都会重新执行build方法，也就是重新生成Text Widget，包括其中的icons和TextStyle等。这样可能会导致性能问题，尤其是icons等变量内容较多或者TextStyle等属性改动频繁的情况下。
+
+// 为了避免这种性能问题，你可以将icons和TextStyle等变量设置为StatefulWidget的成员变量，然后在build方法外部进行初始化，而不是在build方法内部进行初始化，这样在执行build方法时就不会重新创建这些变量。另外，你也可以将这些变量设置为常量或者静态变量，这样也可以避免每次build时重新创建这些变量的问题。
+
+// 定义和初始化放在initState方法中，避免每次build时都执行赋值操作，导致重复添加字符串
+
+  @override
+  void initState() {
+    super.initState();
+    // accessible: 0xe03e
+    icons += "\uE03e";
+    // error:  0xe237
+    icons += "\uE237";
+    // fingerprint: 0xe287
+    icons += "\uE287";
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    // 当 Flutter 内容超出屏幕时，可以使用滚动控件来解决，例如 SingleChildScrollView、ListView、GridView 等。这些控件可以自动适应内容大小，并且可以滚动查看整个内容。
+    // 在 Scaffold 的 resizeToAvoidBottomInset 属性中设置为 false，这将防止底部被键盘遮挡。
+    // 如果你的内容高度已知，可以在 Scaffold 中添加一个底部留白，让内容下移。例如，在 body 属性中嵌套一个 Padding 控件，将底部留出一定的空间。
+    // 如果你的内容高度不确定，可以使用 MediaQuery 来获取屏幕高度，然后根据屏幕高度和内容高度来计算底部留白的高度。
+    /*
+    Scaffold(
+      resizeToAvoidBottomInset: false, // 禁止底部被键盘遮挡
+      body: SingleChildScrollView(
+      child: Column(
+      children: [
+        // 其他内容
+        ],
+      ),
+    ),
+    bottomNavigationBar: Padding(
+      padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+      child: BottomNavigationBar(
+        // 底部导航栏内容
+        ),
+      ),
+    );
+    */
+
+    return SingleChildScrollView(
+        child: Column(
+      // row默认是占据整行且居中
+      // crossAxisAlignment: CrossAxisAlignment.start,
+      // 组头上的大小
+      // mainAxisSize: MainAxisSize.min,
       // mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         _textButton(),
@@ -134,8 +180,38 @@ class _DHHomeButtonState extends State<DHHomeButton> {
           },
           text: 'RawMaterialButton',
         ),
+        FadeInImage(
+          //淡入淡出动画
+          placeholder: AssetImage("images/DSC_10611.jpeg"),
+          image: NetworkImage(
+              "https://book.flutterchina.club/assets/img/3-10.6e8d650a.png"),
+          // width: 100.0,
+          // height: 100.0,
+          fadeOutDuration: Duration(milliseconds: 1),
+          fadeInDuration: Duration(milliseconds: 1),
+        ),
+        ButtonTheme(
+          minWidth: 50,
+          height: 50,
+          child: IconButton(
+            color: Colors.red,
+            padding: EdgeInsets.all(10),
+            icon: Icon(Icons.thumb_up),
+            onPressed: () {
+              print('Selected:2');
+            },
+          ),
+        ),
+        Text(
+          icons,
+          style: TextStyle(
+            fontFamily: "MaterialIcons",
+            fontSize: 24.0,
+            color: Colors.green,
+          ),
+        ),
       ],
-    );
+    ));
   }
 
   Widget _elevatedButton() {
@@ -641,6 +717,7 @@ class _CustomRawMaterialButtonState extends State<CustomRawMaterialButton>
 
     return RawMaterialButton(
       padding: widget.padding ?? EdgeInsets.all(8),
+      // materialTapTargetSize: MaterialTapTargetSize.padded,
       fillColor: Colors.blue,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0),

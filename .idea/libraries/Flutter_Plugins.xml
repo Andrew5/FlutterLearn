@@ -2,6 +2,13 @@
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
       <root url="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub%47/package_info-0.4.3+4" />
+      <root url="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub%47/path_provider-2.0.14" />
+      <root url="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub%47/audioplayers-4.0.1" />
+      <root url="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub%47/audioplayers_web-3.0.1" />
+      <root url="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub%47/path_provider_android-2.0.27" />
+      <root url="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub%47/path_provider_windows-2.1.6" />
+      <root url="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub%47/path_provider_linux-2.1.10" />
+      <root url="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/mirrors.tuna.tsinghua.edu.cn%47dart-pub%47/path_provider_foundation-2.2.2" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
