@@ -1,10 +1,7 @@
-// ignore_for_file: prefer_const_constructors, avoid_print, library_private_types_in_public_api, no_logic_in_create_state
-
-// ignore: avoid_web_libraries_in_flutter
-
-import 'package:flutter/material.dart';
+// ignore: file_names
 import 'package:flutter/cupertino.dart';
 import 'dart:math' as math;
+import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
@@ -45,6 +42,8 @@ class DHHomeButton extends StatefulWidget {
 
 class _DHHomeButtonState extends State<DHHomeButton> {
   set isLoading(bool isLoading) {}
+
+  final TextEditingController controller = TextEditingController();
 
   String icons = "";
 
@@ -180,9 +179,21 @@ class _DHHomeButtonState extends State<DHHomeButton> {
           },
           text: 'RawMaterialButton',
         ),
-        FadeInImage(
+        /*
+        当编译器遇到可以在编译时确定的常量对象时，使用const关键字可以提高性能和内存效率。
+
+使用const关键字可以告诉编译器在编译时创建对象的常量实例，而不是在运行时动态创建对象。这样做有以下几个好处：
+
+减少内存使用：使用const关键字创建的常量对象会在编译时被静态分配并存储在常量区，而不是在堆上分配内存。这意味着常量对象的内存使用更高效，不会占用额外的堆内存。
+编译时优化：编译器可以对const对象进行更多的优化，例如在编译时计算常量表达式、共享相同的常量实例等，从而提高执行效率。
+值的不可变性：const关键字确保对象的值是不可变的，这有助于提高代码的可靠性和可维护性。
+需要注意的是，使用const关键字创建的对象必须满足一定的条件，例如构造函数和成员变量必须是const的，构造函数参数必须是常量表达式等。只有在满足这些条件的情况下，编译器才能够将对象标记为常量并进行相应的优化。
+
+因此，当编译器提示你使用const关键字来改进性能时，你可以考虑将构造函数调用标记为const，从而利用编译时常量优化带来的性能和内存效益。
+        */
+         const FadeInImage(
           //淡入淡出动画
-          placeholder: AssetImage("images/DSC_10611.jpeg"),
+          placeholder: AssetImage("images/DSC_10611.jpg"),
           image: NetworkImage(
               "https://book.flutterchina.club/assets/img/3-10.6e8d650a.png"),
           // width: 100.0,
@@ -196,12 +207,39 @@ class _DHHomeButtonState extends State<DHHomeButton> {
           child: IconButton(
             color: Colors.red,
             padding: EdgeInsets.all(10),
-            icon: Icon(Icons.thumb_up),
+            icon: Icon(
+              Icons.pets,
+              size: 200,
+              color: Colors.orange,
+            ),
             onPressed: () {
               print('Selected:2');
             },
           ),
         ),
+
+        Padding(
+          // padding: EdgeInsets.symmetric(horizontal: 16.0),
+          padding: EdgeInsets.only(left: 20, right: 16.0),
+          child: TextField(
+            decoration: InputDecoration(
+                labelText: "UserName",
+                icon: Icon(Icons.people),
+                hintText: "请输入用户名",
+                border: OutlineInputBorder(),
+                fillColor: Colors.red,
+                filled: true),
+            onChanged: (value) {
+              print("value:$value");
+            },
+            onSubmitted: (value) {
+              print("value:$value");
+            },
+          ),
+        ),
+        // SizedBox(
+        //   height: 10,
+        // ),
         Text(
           icons,
           style: TextStyle(
@@ -209,6 +247,35 @@ class _DHHomeButtonState extends State<DHHomeButton> {
             fontSize: 24.0,
             color: Colors.green,
           ),
+        ),
+        TextField(
+          decoration: InputDecoration(
+              labelText: "UserName",
+              icon: Icon(Icons.people),
+              hintText: "请输入密码",
+              border: OutlineInputBorder(),
+              fillColor: Colors.red,
+              filled: true),
+          onChanged: (value) {
+            print("value:$value");
+          },
+          onSubmitted: (value) {
+            print("value:$value");
+          },
+        ),
+        CustomTextField(
+          hint: "请输入用户名",
+          controller: controller,
+          keyboardType: TextInputType.emailAddress,
+          textInputAction: TextInputAction.done,
+          onSubmitted: (value) {
+            // 当用户按下完成按钮时，会回调这个函数，value是用户输入的内容
+            print("用户输入的内容是$value");
+          },
+          onChanged: (value) {
+            // 当用户输入内容发生变化时，会回调这个函数，value是当前输入框的内容
+            print("当前输入框的内容是$value");
+          },
         ),
       ],
     ));
@@ -416,6 +483,7 @@ class CustomElevatedButton extends StatelessWidget {
   final Function onPressed;
 
   const CustomElevatedButton({
+    super.key,
     required this.text,
     required this.backgroundColor,
     this.borderRadius = 35.0,
@@ -515,6 +583,7 @@ class CustomIconButton extends StatelessWidget {
   final bool iconOnLeft;
 
   const CustomIconButton({
+    super.key,
     required this.icon,
     required this.label,
     required this.onPressed,
@@ -736,6 +805,126 @@ class _CustomRawMaterialButtonState extends State<CustomRawMaterialButton>
               // ),
             ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomTextField extends StatefulWidget {
+  // 成员变量
+
+  @override
+  /*
+  每个Widget都有一个可选的键Key，用于唯一标识该Widget。键是一个对象，用于在Widget树的构建和重建过程中标识子树中的每个Widget。如果两个不同的Widget具有相同的Key，则它们在Widget树中表示相同的对象。
+
+在Flutter中，StatefulWidget也具有可选的Key属性，用于标识该组件实例。如果StatefulWidget被移除并再次插入到Widget树中，则新的组件实例将具有不同的State对象。如果该组件实例具有相同的Key，则在插入到Widget树中时，将使用旧的State对象。这是非常有用的，例如，当您需要保留TextField中的文本内容并保存滚动位置等状态时。
+
+this.key用于在CustomTextField类中存储所提供的Key值，以便在构造函数中将其传递给父类StatefulWidget。super.key用于调用父类StatefulWidget构造函数并传递键值。
+
+为了确保在Widget树中标识组件实例，您应该始终为您的StatefulWidget提供一个键值。该键值可以是一个对象，例如ValueKey，它包含需要在不同的组件实例之间共享的标识符。final关键字用于指示该键是不可变的，即在创建实例之后无法更改。
+  */
+  // ignore: overridden_fields
+  final Key? key; // 将它声明为可空类型
+  final String hint;
+  final IconData prefixIcon;
+  final bool obscureText;
+  final TextEditingController controller;
+  final TextInputType keyboardType;
+  final TextInputAction textInputAction;
+  final Function(String) onSubmitted;
+  final Function(String) onChanged;
+
+  const CustomTextField({
+    this.key,
+    // super.key,// 需要在构造函数中调用父类的构造函数，以将传入的 key 值传递给父类 StatefulWidget
+    // 在参数类型前加上 required 关键字表示该参数是必需的为非空类型，调用方在调用函数或构造函数时必须提供这个参数的值，否则会在编译时出现错误。如果没有加上 required，则该参数可以为 null，调用方可以选择是否提供该参数的值。
+    // 这是因为在 Stateful 组件中，State 对象的创建是由框架来管理的，框架需要一个标识符来关联 Widget 和 State 对象，这个标识符就是 key，因此需要在构造函数中将其传递给父类 StatefulWidget。
+    required this.hint, //required 调用时必须传入 prefixIcon 参数，否则会在编译时报错。
+    this.prefixIcon = Icons.people,
+    this.obscureText = false,
+    required this.controller,
+    required this.keyboardType, // = TextInputType.text,
+    required this.textInputAction, // = TextInputAction.done,
+    required this.onSubmitted,
+    required this.onChanged,
+  }) : super(key: key); // 构造函数中调用父类的构造函数应该放在参数列表之前，可以将 super.key 放到参数列表的最前面：
+
+  @override
+  _CustomTextFieldState createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  bool _showClearButton = false;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.addListener(() {
+      setState(() {
+        _showClearButton = widget.controller.text.isNotEmpty == true;
+        print("输入的用户名是：${widget.controller.text}");
+        // 或者
+        print("输入的内容状态：${widget.controller.text.isNotEmpty}");
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    widget.controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: widget.controller,
+      keyboardType: widget.keyboardType,
+      textInputAction: widget.textInputAction,
+      obscureText: widget.obscureText,
+      onChanged: widget.onChanged,
+      onSubmitted: widget.onSubmitted,
+      decoration: InputDecoration(
+        labelText: '用户名',
+        hintText: '请输入用户名',
+        prefixIcon: Icon(Icons.person),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.blue, width: 2.0),
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.red, width: 1),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.red, width: 1),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        // 设置阴影
+        // 方法一：使用Container包裹TextField，并设置Container的decoration
+        // decoration: BoxDecoration(
+        //   color: Colors.white,
+        //   borderRadius: BorderRadius.circular(8),
+        //   boxShadow: [
+        //     BoxShadow(
+        //       color: Colors.grey.withOpacity(0.5),
+        //       spreadRadius: 1,
+        //       blurRadius: 5,
+        //       offset: Offset(0, 3),
+        //     ),
+        //   ],
+        // ),
+        //   child: TextField(
+        //   decoration: InputDecoration(
+        //     hintText: '请输入文本',
+        //     border: OutlineInputBorder(),
+        //   ),
+        // ),
       ),
     );
   }

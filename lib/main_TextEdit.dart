@@ -85,7 +85,7 @@ class TextDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Text(
-      "Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!",
+      "戏说乾隆 非凡的公主希瑞 大西洋底来的人 阿凡提的故事 天书奇谭 女娲补天 老狼请客 雪孩子 侠胆雄狮",
       textAlign: TextAlign.center,
       maxLines: 2,
       textScaleFactor: 1.5,

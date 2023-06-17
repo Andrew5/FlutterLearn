@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/main_02.dart';
 // 遇良人先成家，遇贵人先立业。遇富婆成家立业
-// 5月1日12
-// 一天 7-12
-// 一天 13-18
 
 void main() => runApp(const MyApp());
 
